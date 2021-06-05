@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".RegisterYourSite">
+
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:textSize="@dimen/browser_actions_context_menu_min_padding"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:textStyle="bold"
+        android:text="If you want to add your site , send to this email dd2640@bs.amalnet.k12.il document that show your ownership of the site"/>
+</LinearLayout>

@@ -1,0 +1,264 @@
+@startuml
+
+title __SiteRegistrationApp's Class Diagram__\n
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Barcode {
+        ~ DateCounter : long
+        ~ HealthDeceleration : Builder
+        ~ QrCodeValue : String
+        ~ SiteName : String
+        ~ UserDateCounter : long
+        ~ isAdmin : String
+        + GetandSendData()
+        + Scan()
+        + ScanQrCode()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        + storeDatetoFirebase()
+        + storeHourtoFirebase()
+        # onActivityResult()
+        # onCreate()
+        - CheckSite()
+        - ChecksAdmin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.CaptureAct {
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Credits {
+        ~ isAdmin : String
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        - ChecksAdmin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.DatePickerFragment {
+        + onCreateDialog()
+        + onDateSet()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.FBref {
+        {static} + FBDB : FirebaseDatabase
+        {static} + refSite : DatabaseReference
+        {static} + refUserVisit : DatabaseReference
+        {static} + refUsers : DatabaseReference
+        {static} + refVisit : DatabaseReference
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.MainActivity {
+        ~ ETMail : EditText
+        ~ ETPass : EditText
+        ~ TXTForgot : TextView
+        ~ TXTRegister : TextView
+        ~ passwordResetDialog : Builder
+        - fAuth : FirebaseAuth
+        - rem_userpass : CheckBox
+        + SignIn()
+        # onCreate()
+        - userLogin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.MyProfile {
+        ~ ListUserInfo : ListView
+        ~ currentFirebaseUser : String
+        ~ isAdmin : String
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        - ChecksAdmin()
+        - ShowData()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.MyVisitors {
+        ~ SiteId : String
+        ~ TodayDate : TextView
+        ~ currentDateString : String
+        ~ date : String
+        - lV : ListView
+        + OpenCalendarForVisitors()
+        + onCreateOptionsMenu()
+        + onDateSet()
+        + onOptionsItemSelected()
+        # onCreate()
+        - UserSitename()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.MyVisits {
+        ~ TodayDate : TextView
+        ~ currentDateString : String
+        ~ date : String
+        - lV : ListView
+        + OpenCalendar()
+        + onCreateOptionsMenu()
+        + onDateSet()
+        + onOptionsItemSelected()
+        # onCreate()
+        - ChecksAdmin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.RegisterYourSite {
+        ~ isAdmin : String
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        - CheckisAdmin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Register_Activity {
+        ~ TXTLogin : TextView
+        ~ m : Matcher
+        ~ pattern : String
+        - ETEmail : EditText
+        - ETLastName : EditText
+        - ETName : EditText
+        - ETPassword : EditText
+        - ETPhone : EditText
+        - fAuth : FirebaseAuth
+        + CheckPhoneNumber()
+        + SingUpAsUser()
+        # onCreate()
+        - SignUp()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Settings {
+        ~ TXTSignSite : TextView
+        ~ isAdmin : String
+        + CreditsActivity()
+        + Go2MyProfile()
+        + LogOut()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        # onCreate()
+        - ChecksAdmin()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Site {
+        + ManagerName : String
+        + SiteId : String
+        + SiteName : String
+        + Site()
+        + Site()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.UserVisit {
+        - Date : String
+        - UserId : String
+        - WhenHour : String
+        - WhereVisited : String
+        + UserVisit()
+        + UserVisit()
+        + getDate()
+        + getUserId()
+        + getWhenHour()
+        + getWhereVisited()
+        + setDate()
+        + setUserId()
+        + setWhenHour()
+        + setWhereVisited()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Users {
+        + Email : String
+        + FullName : String
+        + PhoneNumber : String
+        + SiteName : String
+        + UID : String
+        + isAdmin : String
+        + Users()
+        + Users()
+        + Users()
+    }
+  }
+  
+
+  namespace com.example.SiteRegistrationApp {
+    class com.example.SiteRegistrationApp.Visit {
+        - Hour : String
+        - UserEmail : String
+        - UserName : String
+        - UserPhone : String
+        - WhereSite : String
+        + Visit()
+        + Visit()
+        + getHour()
+        + getUserEmail()
+        + getUserName()
+        + getUserPhone()
+        + getWhereSite()
+        + setHour()
+        + setUserEmail()
+        + setUserName()
+        + setUserPhone()
+        + setWhereSite()
+    }
+  }
+  
+
+  com.example.SiteRegistrationApp.Barcode -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.CaptureAct -up-|> com.journeyapps.barcodescanner.CaptureActivity
+  com.example.SiteRegistrationApp.Credits -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.DatePickerFragment .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.example.SiteRegistrationApp.DatePickerFragment -up-|> androidx.fragment.app.DialogFragment
+  com.example.SiteRegistrationApp.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.MyProfile -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.MyVisitors .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.example.SiteRegistrationApp.MyVisitors -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.MyVisits .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.example.SiteRegistrationApp.MyVisits -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.RegisterYourSite -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.Register_Activity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.SiteRegistrationApp.Settings -up-|> androidx.appcompat.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
