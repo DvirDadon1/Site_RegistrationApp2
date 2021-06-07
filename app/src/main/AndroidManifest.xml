@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.Beta_Version">
+    package="com.example.Site_RegistrationApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,15 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BetaVersion">
-        <activity android:name="com.example.Beta_Version.MyVisitors"></activity>
-        <activity android:name="com.example.Beta_Version.RegisterYourSite" />
-        <activity android:name="com.example.Beta_Version.Credits" />
-        <activity android:name="com.example.Beta_Version.MyProfile" />
-        <activity android:name="com.example.Beta_Version.Barcode" />
-        <activity android:name="com.example.Beta_Version.Settings" />
-        <activity android:name="com.example.Beta_Version.MyVisits" />
-        <activity android:name="com.example.Beta_Version.Register_Activity" />
-        <activity android:name="com.example.Beta_Version.MainActivity">
+        <activity android:name="com.example.Site_RegistrationApp.MyVisitors"></activity>
+        <activity android:name="com.example.Site_RegistrationApp.RegisterYourSite" />
+        <activity android:name="com.example.Site_RegistrationApp.Credits" />
+        <activity android:name="com.example.Site_RegistrationApp.MyProfile" />
+        <activity android:name="com.example.Site_RegistrationApp.Barcode" />
+        <activity android:name="com.example.Site_RegistrationApp.Settings" />
+        <activity android:name="com.example.Site_RegistrationApp.MyVisits" />
+        <activity android:name="com.example.Site_RegistrationApp.Register_Activity" />
+        <activity android:name="com.example.Site_RegistrationApp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.Beta_Version.CaptureAct"
+            android:name="com.example.Site_RegistrationApp.CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden" />

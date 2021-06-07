@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Beta Version"
+rootProject.name = "Site Registration App"
