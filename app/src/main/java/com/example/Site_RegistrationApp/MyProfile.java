@@ -27,7 +27,7 @@ import static com.example.Site_RegistrationApp.FBref.refUsers;
 public class MyProfile extends AppCompatActivity {
     ListView ListUserInfo;
     String currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-    String isAdmin = "0";
+    String isAdmin = "0" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
